@@ -13,6 +13,7 @@
 		289910831EFD967B0096E4E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289910811EFD967B0096E4E3 /* Main.storyboard */; };
 		2899108E1EFD967B0096E4E3 /* LootGenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899108D1EFD967B0096E4E3 /* LootGenTests.swift */; };
 		289910991EFD967B0096E4E3 /* LootGenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289910981EFD967B0096E4E3 /* LootGenUITests.swift */; };
+		28BE896C1EFF1157006713B4 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE896B1EFF1157006713B4 /* Tokenizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		289910941EFD967B0096E4E3 /* LootGenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LootGenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		289910981EFD967B0096E4E3 /* LootGenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootGenUITests.swift; sourceTree = "<group>"; };
 		2899109A1EFD967B0096E4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28BE896B1EFF1157006713B4 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				2899107F1EFD967B0096E4E3 /* Assets.xcassets */,
 				289910811EFD967B0096E4E3 /* Main.storyboard */,
 				289910841EFD967B0096E4E3 /* Info.plist */,
+				28BE896B1EFF1157006713B4 /* Tokenizer.swift */,
 			);
 			path = LootGen;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2899107E1EFD967B0096E4E3 /* ViewController.swift in Sources */,
+				28BE896C1EFF1157006713B4 /* Tokenizer.swift in Sources */,
 				2899107C1EFD967B0096E4E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +511,7 @@
 				2899109F1EFD967B0096E4E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		289910A01EFD967B0096E4E3 /* Build configuration list for PBXNativeTarget "LootGenTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				289910A21EFD967B0096E4E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		289910A31EFD967B0096E4E3 /* Build configuration list for PBXNativeTarget "LootGenUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				289910A51EFD967B0096E4E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -19,8 +19,8 @@ class ViewController: NSViewController {
     var selectedIndex: Int = 0
     
     var topLevelLoot: [[String]] = [
-        ["Trash", "Coins", "Coins + 1", "Coins*2,1d3 Gems", "Coins*2, 1d4 Gems", "Coins*3, 1d5 Gems, Item"],
-        ["Junk", "Coins", "Coins + 1", "Coins*2,1d3 Gems", "Coins*2, 1d4 Gems", "Coins*3, 1d5 Gems, Item"]
+        ["Trash", "[Coins]", "([Coins] + 1)", "([Coins]*2),(1d3 [Gems])", "([Coins]*2), (1d4 [Gems])", "([Coins]*3), (1d5 [Gems]), [Item]"],
+        ["Junk", "[Coins]", "([Coins] + 1)", "([Coins]*2),(1d3 [Gems])", "([Coins]*2), (1d4 [Gems])", "([Coins]*3), (1d5 [Gems]), [Item]"]
     ]
 
     @IBOutlet weak var popupType: NSPopUpButtonCell!
@@ -32,11 +32,16 @@ class ViewController: NSViewController {
     @IBOutlet weak var stepperCount: NSStepper!
     
     @IBAction func generateLoot(_ sender: Any) {
-        
         textLoot.stringValue = "Type: \(popupType.item(at: selectedIndex)!.title)\n"
             + "Count: \(self.count)\n"
             + "Modifier: \(self.modifier)\n\n"
-            + "Treasure: \(topLevelLoot[selectedIndex][getTreasureLevel()])"
+        
+        let treasure = topLevelLoot[selectedIndex][getTreasureLevel()]
+        let treasureArr = treasure.components(separatedBy: ",")
+        
+        textLoot.stringValue += treasureArr.map( {
+            (t: String) -> String in return "Treasure: \(generateTreasure(t))"
+        }).joined(separator: "\n")
         
     }
     
@@ -53,6 +58,19 @@ class ViewController: NSViewController {
         default: return 5
         }
         
+    }
+    
+    func generateTreasure(_ text: String) -> String {
+        let tokenizer = Tokenizer(text)
+        var loot = "\(text): "
+        while true {
+            let token = tokenizer.nextToken()
+            if token.tokenType == TokenType.tokenEnd {
+                break;
+            }
+            loot += "(" + String(describing: token.tokenType) + ",'" + token.token + "')"
+        }
+        return loot
     }
     
     override func viewDidLoad() {
